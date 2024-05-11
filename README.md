@@ -4,7 +4,7 @@ Headhunter is a project aimed at creating AI-assisted job adverts, designed to m
 
 For a live preview [click here](https://headhunterwithtailwind.onrender.com/)
 
-| <img src="https://github.com/MikaelEngvall/HeadhunterTailwind/blob/main/build/img/headhunter_tailwind_desktop.png" width="500" height="auto" alt="image"> |
+| <img src="https://github.com/MikaelEngvall/HeadhunterTailwindCSS/blob/main/build/img/headhunter_tailwind_desktop.png" width="500" height="auto" alt="image"> |
 | --- |
 | *Light mode* |
 
