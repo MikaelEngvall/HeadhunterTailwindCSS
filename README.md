@@ -4,7 +4,7 @@ Headhunter is a project aimed at creating AI-assisted job adverts, designed to m
 
 For a live preview [click here](https://headhunterwithtailwind.onrender.com/)
 
-| <img src="https://github.com/MikaelEngvall/HeadhunterWithTailwind/blob/main/build/img/headhunter_tailwind_desktop.png" width="500" height="auto" alt="image"> |
+| <img src="https://github.com/MikaelEngvall/HeadhunterTailwind/blob/main/build/img/headhunter_tailwind_desktop.png" width="500" height="auto" alt="image"> |
 | --- |
 | *Light mode* |
 
@@ -30,11 +30,11 @@ run the `npm run tailwind` script and open the `index.html` file in your web bro
 git clone https://github.com/MikaelEngvall/HeadhunterWithTailwind
 ```
 
-| <img src="https://github.com/MikaelEngvall/HeadhunterWithTailwind/blob/main/build/img/headhunter_tailwind_mobile_landing_page.png" width="300" height="auto" alt="image"> |
+| <img src="https://github.com/MikaelEngvall/HeadhunterTailwind/blob/main/build/img/headhunter_tailwind_mobile_landing_page.png" width="300" height="auto" alt="image"> |
 | --- |
 | *Light mode mobile landing page* |
 
-| <img src="https://github.com/MikaelEngvall/HeadhunterWithTailwind/blob/main/build/img/headhunter_tailwind_mobile_menu.png" width="300" height="auto" alt="image"> |
+| <img src="https://github.com/MikaelEngvall/HeadhunterTailwind/blob/main/build/img/headhunter_tailwind_mobile_menu.png" width="300" height="auto" alt="image"> |
 | --- |
 | *Light mode mobile menu* |
 
