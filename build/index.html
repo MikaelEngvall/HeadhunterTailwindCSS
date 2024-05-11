@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en" class="sm:scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Headhunter</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/base64.js"></script>
+    <script src="js/login.js"></script>
+  </head>
+
+  <body class="min-h-screen bg-slate-50 dark:bg-black dark:text-white">
+    <header class="sticky top-0 z-10 bg-teal-700 text-white">
+      <section class="mx-auto flex max-w-5xl items-center justify-between p-4">
+        <h1 class="text-3xl font-medium">
+          <a href="#home">✨ Headhunter</a>
+        </h1>
+        <div>
+          <button
+            id="hamburger-button"
+            class="relative h-8 w-8 cursor-pointer text-3xl md:hidden"
+          >
+            <!-- &#9776; -->
+            <div
+              class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-white transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-3 before:rounded before:bg-white before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-3 after:rounded after:bg-white after:transition-all after:duration-500 after:content-['']"
+            ></div>
+          </button>
+          <nav class="hidden space-x-8 text-xl md:block" aria-label="main">
+            <a
+              href="#admin"
+              class="pointer-events-none opacity-50 hover:opacity-90"
+              >Admin</a
+            >
+            <a
+              href="#account"
+              class="pointer-events-none opacity-50 hover:opacity-90"
+              >Account</a
+            >
+            <a
+              href="#adverts"
+              class="pointer-events-none opacity-50 hover:opacity-90"
+              >Adverts</a
+            >
+            <a href="#contact" class="hover:opacity-90">Contact</a>
+            <a href="#login" class="hover:opacity-90">Login</a>
+            <a href="#signup" class="hover:opacity-90">Sign up</a>
+          </nav>
+        </div>
+      </section>
+      <section
+        id="mobile-menu"
+        class="top-68 absolute hidden w-full origin-top animate-open-menu flex-col justify-center bg-black text-4xl"
+      >
+        <nav
+          class="flex min-h-screen flex-col items-center py-8"
+          aria-label="mobile"
+        >
+          <a href="#home" class="w-full py-6 text-center hover:opacity-90"
+            >Home</a
+          >
+          <a
+            href="#admin"
+            class="pointer-events-none w-full py-6 text-center opacity-50 hover:opacity-90"
+            >Admin</a
+          >
+          <a
+            href="#account"
+            class="pointer-events-none w-full py-6 text-center opacity-50 hover:opacity-90"
+            >Account</a
+          >
+          <a
+            href="#adverts"
+            class="pointer-events-none w-full py-6 text-center opacity-50 hover:opacity-90"
+            >Adverts</a
+          >
+          <a href="#contact" class="w-full py-6 text-center hover:opacity-90"
+            >Contact</a
+          >
+          <a href="#login" class="w-full py-6 text-center hover:opacity-90"
+            >Login</a
+          >
+          <a href="#signup" class="w-full py-6 text-center hover:opacity-90"
+            >Sign up</a
+          >
+          <a href="#footer" class="w-full py-6 text-center hover:opacity-90"
+            >Legal</a
+          >
+        </nav>
+      </section>
+    </header>
+
+    <! -- HOME -->
+    <main class="mx-auto max-w-4xl">
+      <section
+        id="home"
+        class="widescreen:section-min-height tallscreen:section-min-height mb-12 flex scroll-mt-40 flex-col-reverse items-center justify-center gap-8 p-6 sm:flex-row"
+      >
+        <article class="sm:w-1/2">
+          <h2
+            class="max-w-md text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-left sm:text-5xl"
+          >
+            Make your job adverts
+            <span class="text-indigo-700 dark:text-indigo-300">reach out</span>
+            among the rest
+          </h2>
+          <p
+            class="mt-4 max-w-md text-center text-2xl text-slate-700 dark:text-slate-400 sm:text-left"
+          >
+            For AI assisted job adverts
+          </p>
+          <p
+            class="mt-4 max-w-md text-center text-2xl text-slate-700 dark:text-slate-400 sm:text-left"
+          >
+            Think Headhunter.
+          </p>
+        </article>
+        <img class="w-1/2" src="./img/AI3d.png" alt="Robot" />
+      </section>
+
+      <! -- ADMIN -->
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+      <section
+        id="admin"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
+        >
+          Admin
+        </h2>
+      </section>
+
+      <! -- ACCOUNT -->
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+      <section
+        id="account"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
+        >
+          Account
+        </h2>
+      </section>
+
+      <! -- ADVERTS -->
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+      <section
+        id="adverts"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
+        >
+          Adverts
+        </h2>
+      </section>
+
+      <! -- CONTACT -->
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+      <section
+        id="contact"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
+        >
+          Contact Us
+        </h2>
+        <form
+          action=""
+          class="items-left mx-auto flex max-w-4xl flex-col gap-4 text-2xl sm:text-3xl"
+        >
+          <label for="subject">Subject:</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+            minlength="3"
+            maxlength="60"
+            placeholder="Your Subject"
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          />
+          <label for="message">Message:</label>
+          <textarea
+            name="message"
+            id="message"
+            cols="30"
+            rows="10"
+            placeholder="Your Message"
+            required
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          ></textarea>
+          <button
+            class="w-48 rounded-xl border border-solid border-slate-900 bg-teal-700 p-3 text-white hover:bg-teal-600 active:bg-teal-500 dark:border-none"
+          >
+            Submit
+          </button>
+        </form>
+      </section>
+
+      <! -- LOGIN -->
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+      <section
+        id="login"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
+        >
+          Login
+        </h2>
+        <form
+          id="login-form"
+          class="items-left mx-auto flex max-w-4xl flex-col gap-4 text-2xl sm:text-3xl"
+          onsubmit="handleLogin(event)"
+        >
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Your Email"
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          />
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Your Password"
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          />
+          <button
+            type="submit"
+            class="w-48 rounded-xl border border-solid border-slate-900 bg-teal-700 p-3 text-white hover:bg-teal-600 active:bg-teal-500 dark:border-none"
+          >
+            Login
+          </button>
+        </form>
+      </section>
+
+      <! -- SIGNUP -->
+      <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+      <section
+        id="signup"
+        class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6"
+      >
+        <h2
+          class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl"
+        >
+          Sign up
+        </h2>
+        <form
+          id="signup-form"
+          class="items-left mx-auto flex max-w-4xl flex-col gap-4 text-2xl sm:text-3xl"
+          onsubmit="handleSignUp(event)"
+        >
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="Your Email"
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          />
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Your Password"
+            class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"
+          />
+          <button
+            type="submit"
+            class="w-48 rounded-xl border border-solid border-slate-900 bg-teal-700 p-3 text-white hover:bg-teal-600 active:bg-teal-500 dark:border-none"
+          >
+            Sign up
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer id="footer" class="bg-teal-700 text-xl text-white">
+      <section
+        class="mx-auto flex max-w-4xl flex-col p-4 sm:flex-row sm:justify-between"
+      >
+        <address>
+          <h2>Headhunter AI-Powered Products</h2>
+          Storgatan 55<br />
+          Karlskrona 0455-555555<br />
+          Email:
+          <a href="mailto:inquiries@headhunter.com">inquires@headhunter.com</a
+          ><br />
+          Phone: <a href="tel:+46455555555">(0455) 555555</a>
+        </address>
+        <nav class="hidden flex-col gap-2 md:flex" aria-label="footer">
+          <a
+            href="#admin"
+            class="pointer-events-none opacity-50 hover:opacity-90"
+            >Admin</a
+          >
+          <a href="#account" class="hover:opacity-90">Account</a>
+          <a href="#adverts" class="hover:opacity-90">Adverts</a>
+          <a href="#contact" class="hover:opacity-90">Contact</a>
+          <a href="#login" class="hover:opacity-90">Login</a>
+          <a href="#signup" class="hover:opacity-90">Sign Up</a>
+        </nav>
+        <div class="flex flex-col sm:gap-2">
+          <p class="text-right">Copyright &copy; <span id="year">2024</span></p>
+          <p class="text-right">All Rights Reserved</p>
+        </div>
+      </section>
+    </footer>
+    <script>
+      // Add logic to enable/disable navigation links based on user authentication and role
+      const enableNavigationLinks = () => {
+        const navigationLinks = document.querySelectorAll("nav a");
+        navigationLinks.forEach((link) => {
+          link.classList.remove("pointer-events-none", "opacity-50");
+        });
+      };
+
+      const disableAdminLink = () => {
+        const adminLink = document.querySelector('nav a[href="#admin"]');
+        adminLink.classList.add("pointer-events-none", "opacity-50");
+      };
+
+      const isAdmin = (roles) => {
+        return roles.includes("admin");
+      };
+
+      const isLoggedIn = () => {
+        return localStorage.getItem("token") !== null;
+      };
+
+      const updateNavigationLinks = () => {
+        if (isLoggedIn()) {
+          enableNavigationLinks();
+          const roles = localStorage.getItem("roles");
+          if (roles && !isAdmin(roles)) {
+            disableAdminLink();
+          }
+        }
+      };
+
+      document.addEventListener("DOMContentLoaded", updateNavigationLinks);
+    </script>
+  </body>
+</html>
