@@ -32,11 +32,11 @@ git clone https://github.com/MikaelEngvall/HeadhunterWithTailwind
 
 | <img src="https://github.com/MikaelEngvall/HeadhunterTailwindCSS/blob/main/build/img/headhunter_tailwind_mobile_landing_page.png" width="300" height="auto" alt="image"> |
 | --- |
-| *Light mode mobile landing page* |
+| *Light mode mobile landing page not logged in* |
 
 | <img src="https://github.com/MikaelEngvall/HeadhunterTailwindCSS/blob/main/build/img/headhunter_tailwind_mobile_menu.png" width="300" height="auto" alt="image"> |
 | --- |
-| *Light mode mobile menu* |
+| *Mobile menu not logged in* |
 
 Feel free to customize this project according to your needs. You can modify the content, styles, or functionality to better suit your requirements.
 
