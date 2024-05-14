@@ -337,19 +337,13 @@
       </section>
     </footer>
     <script>
-      // Add logic to enable/disable navigation links based on user authentication and role
-      const enableNavigationLinks = () => {
-        const navigationLinks = document.querySelectorAll("nav a");
-        navigationLinks.forEach((link) => {
-          link.classList.remove("pointer-events-none", "opacity-50");
-        });
-      };
 
-      const disableAdminLink = () => {
-        const adminLink = document.querySelector('nav a[href="#admin"]');
-        adminLink.classList.add("pointer-events-none", "opacity-50");
-      };
-
+const disableAdminLink = () => {
+  const adminLink = document.querySelector('nav a[href="#admin"]');
+  if (adminLink) {
+    adminLink.remove();
+  }
+};
       const isAdmin = (roles) => {
         return roles.includes("admin");
       };
@@ -361,7 +355,7 @@
       const updateNavigationLinks = () => {
     const navigationLinks = document.querySelectorAll("nav a");
     const mobileNavigationLinks = document.querySelectorAll("#mobile-menu a");
-    
+
     // Check if user is logged in
     if (isLoggedIn()) {
         navigationLinks.forEach((link) => {
@@ -371,8 +365,14 @@
             link.classList.remove("hidden");
         });
         const roles = localStorage.getItem("roles");
-        if (roles && !isAdmin(roles)) {
-            disableAdminLink();
+        if (roles) {
+            if (isAdmin(roles)) {
+                // Show Admin link
+                document.querySelector('nav a[href="#admin"]').classList.remove("hidden");
+            } else {
+                // Hide Admin link
+                document.querySelector('nav a[href="#admin"]').classList.add("hidden");
+            }
         }
     } else {
         // Hide all navigation links except Home, Contact, Login, Sign up
@@ -390,6 +390,7 @@
         });
     }
 };
+
 
 
       document.addEventListener("DOMContentLoaded", updateNavigationLinks);
