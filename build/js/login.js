@@ -28,11 +28,14 @@ async function handleLogin(event) {
         localStorage.setItem("token", response.data.data.token)
         localStorage.setItem("username", response.data.data.userInfo.username)
         localStorage.setItem("email", response.data.data.userInfo.email)
-        localStorage.setItem("token", response.data.data.userInfo.roles)
+        localStorage.setItem("roles", response.data.data.userInfo.roles)
         console.log(localStorage);
 
         enableNavigationLinks();
+        populateAccountDetails(response.data.data.userInfo);
+
         window.location.hash = "#account";
+
     } catch (error) {
         console.error("Error logging in", error);
     }
