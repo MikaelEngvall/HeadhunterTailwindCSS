@@ -30,9 +30,22 @@ async function handleLogin(event) {
         localStorage.setItem("email", response.data.data.userInfo.email)
         localStorage.setItem("token", response.data.data.userInfo.roles)
         console.log(localStorage);
+        // Redirect to the #account section upon successful login
+        window.location.hash = "#account";
+        populateAccountDetails(response.data.data.userInfo);
 
         enableNavigationLinks();
     } catch (error) {
         console.error("Error logging in", error);
     }
 }
+function populateAccountDetails(userInfo) {
+    const usernameElement = document.getElementById('username');
+    const emailElement = document.getElementById('email');
+
+    // Populate the table with user details
+    usernameElement.textContent = userInfo.username;
+    emailElement.textContent = userInfo.email;
+    // You can populate additional fields as needed
+}
+
