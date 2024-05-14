@@ -32,6 +32,7 @@ async function handleLogin(event) {
         console.log(localStorage);
 
         enableNavigationLinks();
+        window.location.hash = "#account";
     } catch (error) {
         console.error("Error logging in", error);
     }
