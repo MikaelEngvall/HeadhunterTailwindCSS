@@ -43,9 +43,7 @@ async function handleLogin(event) {
 
 async function populateAccountDetails(userInfo) {
 
-    const username = localStorage.getItem("username");
-    const email = localStorage.getItem("email");
-    const roles = localStorage.getItem("roles");
+    const { username, email, roles } = userInfo;
 
     console.log("Username Element:", username);
     console.log("Email Element:", email);
