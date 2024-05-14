@@ -31,17 +31,17 @@
           <nav class="hidden space-x-8 text-xl md:block" aria-label="main">
             <a
               href="#admin"
-              class="pointer-events-none opacity-50 hover:opacity-90"
+              class="hover:opacity-90"
               >Admin</a
             >
             <a
               href="#account"
-              class="pointer-events-none opacity-50 hover:opacity-90"
+              class="hover:opacity-90"
               >Account</a
             >
             <a
               href="#adverts"
-              class="pointer-events-none opacity-50 hover:opacity-90"
+              class="hover:opacity-90"
               >Adverts</a
             >
             <a href="#contact" class="hover:opacity-90">Contact</a>
@@ -147,7 +147,8 @@
         >
           Account
         </h2>
-        
+        <div class="flex flex-col items-center gap-4">
+          
       </section>
 
       <! -- ADVERTS -->
@@ -312,17 +313,17 @@
         <nav class="hidden flex-col gap-2 md:flex" aria-label="footer">
           <a
             href="#admin"
-            class="pointer-events-none opacity-50 hover:opacity-90"
+            class="hover:opacity-90"
             >Admin</a
           >
           <a
             href="#account"
-            class="pointer-events-none opacity-50 hover:opacity-90"
+            class="hover:opacity-90"
             >Account</a
           >
           <a
             href="#adverts"
-            class="pointer-events-none opacity-50 hover:opacity-90"
+            class="hover:opacity-90"
             >Adverts</a
           >
           <a href="#contact" class="hover:opacity-90">Contact</a>
@@ -358,14 +359,38 @@
       };
 
       const updateNavigationLinks = () => {
-        if (isLoggedIn()) {
-          enableNavigationLinks();
-          const roles = localStorage.getItem("roles");
-          if (roles && !isAdmin(roles)) {
+    const navigationLinks = document.querySelectorAll("nav a");
+    const mobileNavigationLinks = document.querySelectorAll("#mobile-menu a");
+    
+    // Check if user is logged in
+    if (isLoggedIn()) {
+        navigationLinks.forEach((link) => {
+            link.classList.remove("hidden");
+        });
+        mobileNavigationLinks.forEach((link) => {
+            link.classList.remove("hidden");
+        });
+        const roles = localStorage.getItem("roles");
+        if (roles && !isAdmin(roles)) {
             disableAdminLink();
-          }
         }
-      };
+    } else {
+        // Hide all navigation links except Home, Contact, Login, Sign up
+        navigationLinks.forEach((link) => {
+            const href = link.getAttribute("href");
+            if (href !== "#home" && href !== "#contact" && href !== "#login" && href !== "#signup") {
+                link.classList.add("hidden");
+            }
+        });
+        mobileNavigationLinks.forEach((link) => {
+            const href = link.getAttribute("href");
+            if (href !== "#home" && href !== "#contact" && href !== "#login" && href !== "#signup") {
+                link.classList.add("hidden");
+            }
+        });
+    }
+};
+
 
       document.addEventListener("DOMContentLoaded", updateNavigationLinks);
     </script>
