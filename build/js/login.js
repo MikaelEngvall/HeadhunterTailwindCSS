@@ -1,4 +1,3 @@
-// Define the handleLogin function to handle form submission
 async function handleLogin(event) {
     event.preventDefault();
 
@@ -31,7 +30,8 @@ async function handleLogin(event) {
         localStorage.setItem("roles", response.data.data.userInfo.roles)
         console.log(localStorage);
 
-        enableNavigationLinks();
+        // Update navigation links after successful login
+        updateNavigationLinks();
         populateAccountDetails(response.data.data.userInfo);
 
         window.location.hash = "#account";
@@ -40,6 +40,7 @@ async function handleLogin(event) {
         console.error("Error logging in", error);
     }
 }
+
 
 async function populateAccountDetails(userInfo) {
 
