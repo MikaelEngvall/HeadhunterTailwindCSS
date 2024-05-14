@@ -37,3 +37,15 @@ async function handleLogin(event) {
         console.error("Error logging in", error);
     }
 }
+
+async function populateAccountDetails(userInfo) {
+    const usernameElement = document.getElementById('username');
+    const emailElement = document.getElementById('email');
+    const rolesElement = document.getElementById('roles');
+
+    // Populate the table with user details
+    usernameElement.textContent = userInfo.username;
+    emailElement.textContent = userInfo.email;
+    rolesElement.textContent = userInfo.roles;
+
+}
