@@ -42,13 +42,18 @@ async function handleLogin(event) {
 }
 
 async function populateAccountDetails(userInfo) {
-    const usernameElement = document.getElementById('username');
-    const emailElement = document.getElementById('email');
-    const rolesElement = document.getElementById('roles');
+
+    const username = localStorage.getItem("username");
+    const email = localStorage.getItem("email");
+    const roles = localStorage.getItem("roles");
+
+    console.log("Username Element:", username);
+    console.log("Email Element:", email);
+    console.log("Roles Element:", roles);
 
     // Populate the table with user details
-    usernameElement.textContent = userInfo.username;
-    emailElement.textContent = userInfo.email;
-    rolesElement.textContent = userInfo.roles;
+    document.getElementById('username').textContent = username;
+    document.getElementById('email').textContent = email;
+    document.getElementById('roles').textContent = roles;
 
 }
