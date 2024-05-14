@@ -28,7 +28,7 @@ async function handleLogin(event) {
         localStorage.setItem("token", response.data.data.token)
         localStorage.setItem("username", response.data.data.userInfo.username)
         localStorage.setItem("email", response.data.data.userInfo.email)
-        localStorage.setItem("token", response.data.data.userInfo.roles)
+        localStorage.setItem("roles", response.data.data.userInfo.roles)
         console.log(localStorage);
         // Redirect to the #account section upon successful login
         window.location.hash = "#account";
@@ -42,10 +42,12 @@ async function handleLogin(event) {
 function populateAccountDetails(userInfo) {
     const usernameElement = document.getElementById('username');
     const emailElement = document.getElementById('email');
+    const rolesElement = document.getElementById('roles');
 
     // Populate the table with user details
     usernameElement.textContent = userInfo.username;
     emailElement.textContent = userInfo.email;
-    // You can populate additional fields as needed
+    rolesElement.textContent = userInfo.roles;
+
 }
 
