@@ -32,6 +32,7 @@ async function handleLogin(event) {
 
         // Update navigation links after successful login
         updateNavigationLinks();
+
         populateAccountDetails(response.data.data.userInfo);
 
         window.location.hash = "#account";
