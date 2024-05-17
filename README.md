@@ -3,7 +3,10 @@
 Headhunter is a project aimed at creating AI-assisted job adverts, designed to make your job postings stand out among the rest.
 
 For a live preview [click here](https://headhunter.onrender.com/)
+
 In order for the frontend to work you must run my backend on your local machine, here is [my backend](https://github.com/MikaelEngvall/headhunter-backend)
+
+Login with `m@e.se` and `a`
 
 | <img src="https://github.com/MikaelEngvall/HeadhunterTailwindCSS/blob/main/build/img/headhunter_tailwind_desktop.png" width="500" height="auto" alt="image"> |
 | --- |
